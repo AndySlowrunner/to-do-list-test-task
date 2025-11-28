@@ -1,17 +1,28 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import Header from './components/Header/Header.jsx'
+import TaskList from './components/TaskList/TaskList.jsx'
 import './App.css'
+import { fetchData } from './data.js';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const getTasks = async () => {
+      try {
+        const data = await fetchData();
+        setTasks(prev => [...prev, ...data]);
+      } catch (error) {
+        alert(error)
+      }
+    };
+    getTasks();
+  }, []);
 
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+      <Header />
+      <TaskList arr={tasks} />
     </>
   )
 }
