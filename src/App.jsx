@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import Header from './components/Header/Header.jsx'
 import TaskList from './components/TaskList/TaskList.jsx'
 import './App.css'
-import { fetchData } from './data.js';
+import { fetchData } from './data.js'
+import AddNewTask from './components/AddNewTask/AddNewTask.jsx'
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -22,6 +23,7 @@ function App() {
   return (
     <>
       <Header />
+      <AddNewTask />
       <TaskList arr={tasks} />
     </>
   )
