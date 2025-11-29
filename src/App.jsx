@@ -7,9 +7,10 @@ import AddNewTask from './components/AddNewTask/AddNewTask.jsx'
 
 function App() {
   const [tasks, setTasks] = useState([]);
-
+  console.log(tasks);
+  
   useEffect(() => {
-    const getTasks = async () => {
+    const fetchTasks = async () => {
       try {
         const data = await fetchData();
         setTasks(prev => [...prev, ...data]);
@@ -17,14 +18,14 @@ function App() {
         alert(error)
       }
     };
-    getTasks();
+    fetchTasks();
   }, []);
 
   return (
     <>
       <Header />
       <AddNewTask />
-      <TaskList arr={tasks} />
+      <TaskList />
     </>
   )
 }

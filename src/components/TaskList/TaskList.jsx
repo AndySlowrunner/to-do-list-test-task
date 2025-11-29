@@ -1,14 +1,18 @@
+import { useSelector } from "react-redux";
 import TaskCard from "../TaskCard/TaskCard";
+import { getTasks } from "../../redux/selectors";
 
-const TaskList = ({arr}) => {
-  console.log(arr);
+const TaskList = () => {
+  const tasks = useSelector(getTasks);
+
+  console.log(tasks);
   return (
     <>
       <div>
         <ul>
-          {arr.map((el) => (
-            <li key={el.id}>
-              <TaskCard task={el}/>
+          {tasks.map((task) => (
+            <li key={task.id}>
+              <TaskCard task={task} />
             </li>
           ))}
         </ul>

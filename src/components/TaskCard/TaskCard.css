@@ -4,3 +4,7 @@
     padding: 8px;
     margin: 16px;
 }
+
+p {
+    display: inline;
+}
