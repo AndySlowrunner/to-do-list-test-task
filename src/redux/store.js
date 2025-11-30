@@ -2,15 +2,51 @@ import { devToolsEnhancer } from "@redux-devtools/extension";
 import { createStore } from "redux";
 
 const InitialaState = {
-  tasks: [
-    { id: 1, title: "learn Redux", done: false },
-    { id: 2, title: "learn JavaScript", done: true },
-    { id: 3, title: "learn React Router", done: true },
-  ],
+  tasks: [],
 };
 
-const rootReducer = (state = InitialaState) => {
-    return state;
+const rootReducer = (state = InitialaState, action) => {
+  switch (action.type) {
+    case "setTasks": {
+      return {
+        tasks: [...action.payload],
+      };
+    }
+    case "addTask": {
+      return {
+        tasks: [...state.tasks, action.payload],
+      };
+    }
+    case "toggleCheckbox": {
+      return {
+        tasks: state.tasks.map((task) => {
+          if (task.id !== action.payload) {
+            return task;
+          }
+          return { ...task, completed: !task.completed };
+        }),
+      };
+    }
+    case "deleteTask": {
+      return {
+        tasks: state.tasks.filter((task) => {
+          return task.id !== action.payload;
+        }),
+      };
+    }
+    case "updateTask": {
+      return {
+        tasks: state.tasks.map((task) => {
+          if (task.id !== action.payload.id) {
+            return task;
+          }
+          return { ...task, title: action.payload.title };
+        }),
+      };
+    }
+    default:
+      return state;
+  }
 };
 
 const enhancer = devToolsEnhancer();

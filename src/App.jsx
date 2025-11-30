@@ -1,25 +1,26 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Header from './components/Header/Header.jsx'
 import TaskList from './components/TaskList/TaskList.jsx'
 import './App.css'
 import { fetchData } from './data.js'
 import AddNewTask from './components/AddNewTask/AddNewTask.jsx'
+import { useDispatch } from 'react-redux'
+import { setTasks } from './redux/actions.js'
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-  console.log(tasks);
+  const dispatch = useDispatch();
   
   useEffect(() => {
     const fetchTasks = async () => {
       try {
         const data = await fetchData();
-        setTasks(prev => [...prev, ...data]);
+        dispatch(setTasks(data));
       } catch (error) {
-        alert(error)
+        alert(error);
       }
     };
     fetchTasks();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
