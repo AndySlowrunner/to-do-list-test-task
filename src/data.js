@@ -1,4 +1,4 @@
-export const BASE_URL = "https://jsonplaceholder.typicode.com/todos?_limit=10";
+export const BASE_URL = "https://jsonplaceholder.typicode.com/todos";
 
 export const fetchData = async () => {
   try {

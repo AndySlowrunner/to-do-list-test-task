@@ -41,3 +41,10 @@ export const updateTask = (text, taskId) => {
     },
   };
 };
+
+export const setCurrentPage = (page) => {
+  return {
+    type: "setCurrentPage",
+    payload: page,
+  };
+};

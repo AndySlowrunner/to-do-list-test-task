@@ -3,7 +3,7 @@ import { updateTask } from "../../redux/actions";
 import { useState } from "react";
 import "./Modal.css";
 
-export const Modal = ({ task, onClose }) => {
+const Modal = ({ task, onClose }) => {
   const [text, setText] = useState(task.title);
   const dispatch = useDispatch();
     
@@ -32,3 +32,5 @@ export const Modal = ({ task, onClose }) => {
     </>
   );
 };
+
+export default Modal;
