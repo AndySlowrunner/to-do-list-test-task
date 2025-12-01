@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { addTask } from "../../redux/actions";
+import "./AddNewTask.css";
 
 const AddNewTask = () => {
   const dispatch = useDispatch();
@@ -16,8 +17,8 @@ const AddNewTask = () => {
 
   return (
     <>
-      <h2>Add new task</h2>
-      <form onSubmit={handleSubmit}>
+      <p>Add new task</p>
+      <form className="add-form" onSubmit={handleSubmit}>
         <input type="text" name="text" />
         <button type="submit">Create</button>
       </form>

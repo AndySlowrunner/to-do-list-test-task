@@ -4,7 +4,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,9 +13,68 @@
 
 .modal {
     position: fixed;
-    background: white;
-    padding: 20px;
+    gap: 10px;
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #3a3a3a;
+    padding: 40px;
     border-radius: 12px;
     max-width: 400px;
     width: 90%;
+}
+
+.modal h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.modal input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.modal input[type="text"]:focus {
+    outline: none;
+    border-color: #0d4ebe;
+}
+
+.modal button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    width: 50%;
+    margin-top: 10px;
+}
+
+.save-btn {
+    background-color: #0d4ebe;
+    color: white;
+    font-weight: bold;
+}
+
+.save-btn:hover {
+    background-color: #1a60cc;
+}
+
+.close-btn {
+    background-color: #883737;
+    color: white;
+}
+
+.close-btn:hover {
+    background-color: #a94444;
 }

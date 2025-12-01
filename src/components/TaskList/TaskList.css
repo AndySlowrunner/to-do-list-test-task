@@ -1,0 +1,15 @@
+.tasks-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 0;
+    border-top: 1px solid #0d4ebe;
+    border-bottom: 1px solid #0d4ebe;
+    margin: 40px 0;
+    list-style: none;
+}
+
+.tasks-list li {
+    list-style: none;
+}

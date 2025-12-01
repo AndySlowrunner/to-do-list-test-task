@@ -1,0 +1,44 @@
+.add-form {
+    display: flex;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.add-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.add-form input[type="text"]:focus {
+    outline: none;
+    border-color: #0d4ebe;
+}
+
+p {
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.add-form button {
+    padding: 4px 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0d4ebe;
+    color: #fff;
+
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.add-form button:hover {
+    background-color: #1a60cc;
+}

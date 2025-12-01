@@ -3,6 +3,7 @@ import { useState } from "react";
 import { currentPage, getTasks, tasksPerPage } from "../../redux/selectors";
 import TaskCard from "../TaskCard/TaskCard";
 import Modal from "../ModalEditTask/Modal";
+import "./TaskList.css";
 
 const TaskList = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,8 +27,8 @@ const TaskList = () => {
 
   return (
     <>
-      <div>
-        <ul>
+      <div className="container">
+        <ul className="tasks-list">
           {visibleTasks.map((task) => (
             <li key={task.id}>
               <TaskCard task={task} onEdit={() => openModal(task)} />

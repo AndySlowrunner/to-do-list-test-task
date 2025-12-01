@@ -4,7 +4,7 @@ import { createStore } from "redux";
 const InitialaState = {
   tasks: [],
   currentPage: 1,
-  tasksPerPage: 10,
+  tasksPerPage: 12,
 };
 
 const rootReducer = (state = InitialaState, action) => {

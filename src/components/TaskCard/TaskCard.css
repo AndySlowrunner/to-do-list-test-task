@@ -1,10 +1,48 @@
 .thumb {
-    border: 1px solid darkgray;
-    border-radius: 8px;
-    padding: 8px;
-    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    width: 260px;
+    padding: 16px;
+    border-radius: 10px;
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #3a3a3a;
 }
 
-p {
-    display: inline;
+.thumb p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.thumb button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #444;
+    color: #fff;
+
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.thumb button:hover {
+    background: #555;
+}
+
+.thumb button:last-of-type {
+    background: #883737;
+}
+
+.thumb button:last-of-type:hover {
+    background: #a94444;
+}
+
+.thumb input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin: 0 auto;
 }

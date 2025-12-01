@@ -16,20 +16,20 @@ const Modal = ({ task, onClose }) => {
   const handleChange = event => setText(event.target.value);
 
   return (
-    <>
       <div className="overlay" onClick={onClose}>
-        <div className="modal" onClick={e=>e.stopPropagation()}>
+        <div className="modal" onClick={(e) => e.stopPropagation()}>
           <h3>Edit task</h3>
           <form onSubmit={handlSubmit}>
             <input type="text" value={text} onChange={handleChange} />
-            <button type="onSubmit">Save</button>
+            <button className="save-btn" type="onSubmit">
+              Save
+            </button>
           </form>
-          <button type="button" onClick={onClose}>
+          <button className="close-btn" type="button" onClick={onClose}>
             Close
           </button>
         </div>
       </div>
-    </>
   );
 };
 
